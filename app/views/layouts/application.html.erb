@@ -13,10 +13,12 @@
   <body>
     <header>
       <div class="nav">
-        <p class="nav__logo">ASHIMOTO SHARE</p>
+        <%= link_to "ASHIMOTO SHARE", root_path, class: "nav__logo" %>
         <div class="nav__btn">
           <% if user_signed_in? %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <p class="signed"><%= current_user.name %>さんがログインしています
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            </p>
           <% else %>
             <%= link_to "ログイン", new_user_session_path, class: 'post' %>
             <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
@@ -24,6 +26,9 @@
         </div>
       </div>
     </header>
+    <% if flash.notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
     <%= yield %>
     <footer>
         <p>ASHIMOTO SHARE</p>
