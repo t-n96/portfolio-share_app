@@ -3,7 +3,8 @@ ja:
     attributes:
       user:
         current_password: "現在のパスワード"
-        name: "名前"
+        avatar: "アイコン"
+        name: "ユーザー名"
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
