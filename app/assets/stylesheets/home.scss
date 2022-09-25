@@ -7,6 +7,10 @@ body{
   margin: 0;
 }
 
+body.open{
+  transform: translateX(-250px);
+}
+
 header{
   width: 100%;
   height: 80px;
@@ -30,11 +34,59 @@ header{
     }
 
     &__btn{
-      margin-top: 28px;
+      margin-top: 5px;
       margin-right: 20px;
+      display: flex;
 
       & .signed{
         margin: 0%;
+      }
+    }
+
+    &__item{
+      margin-top: 25px;
+      margin-right: 20px;
+    }
+
+    &__item2{
+      margin-top: 5px;
+      margin-right: 40px;
+    }
+  }
+
+  .overlay{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  .overlay.open{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .hamburger-menu{
+    width: 50px;
+    height: 30px;
+
+    & span{
+      display: inline-block;
+      box-sizing: border-box;
+      width: 100%;
+      height: 4px;
+      background-color: black;
+      transition: all .5s;
+
+      &:nth-child(2){
+        margin-bottom: 6px;
+      }
+
+      &:nth-child(3){
+        margin-bottom: 12px;
       }
     }
   }
