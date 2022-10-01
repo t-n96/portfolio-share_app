@@ -27,17 +27,16 @@
               <% end %>
             </div>
             <div class="hamburger-menu">
-              <span></span>
-              <span></span>
-              <span></span>
+              <%= image_tag 'menu_open.png' %>
             </div>
             <div class="menu-list">
-              <ul>
-                <li>HOME</li>
-                <li>ABOUT</li>
-                <li>NEWS</li>
-                <li>CONTACT</li>
-              </ul>
+              <div class="menu-item">
+                <ul>
+                  <li><%= link_to "アカウント情報", edit_user_registration_path, class:"link" %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"link" %></li>
+                </ul>
+                <%= image_tag 'menu_close.png', class:"menu_close", size: '33x33' %>
+              </div>
             </div
             <div class="overlay"></div>
           <% else %>

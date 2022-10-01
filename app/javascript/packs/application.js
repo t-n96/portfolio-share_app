@@ -14,13 +14,21 @@ ActiveStorage.start()
 require('jquery')
 
 $(function(){
-  $('.notice').fadeOut(2000);
+  $('.notice').fadeOut(1500);
 });
 
 $(function(){
 
   $(".hamburger-menu").on("click", function(){
-    $(this).nextAll('.menu-list').slideToggle("fast");
+    $('.menu-list').toggleClass('active');
+  });
+
+});
+
+$(function(){
+
+  $(".menu_close").on("click", function(){
+    $('.menu-list').removeClass('active');
   });
 
 });
