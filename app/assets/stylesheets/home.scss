@@ -35,14 +35,9 @@ header{
       }
     }
 
-    &__item{
-      margin-top: 25px;
-      margin-right: 10px;
-    }
-
-    &__item2{
+    &__icon{
       margin-top: 5px;
-      margin-right: 20px;
+      margin-right: 10px;
 
       & .icon{
         border-radius: 50%;
@@ -60,6 +55,13 @@ header{
       &:nth-child(2){
         margin-right: 10px;
       }
+    }
+
+    & .new_post{
+      text-decoration: none;
+      color: black;
+      margin-top: 20px;
+      margin-right: 25px;
     }
   }
 
@@ -210,6 +212,7 @@ ul{
 }
 
 footer{
+  width: 100%;
   height: 200px;
   text-align: center;
   padding-top: 10%;

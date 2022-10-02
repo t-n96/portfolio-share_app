@@ -13,6 +13,8 @@ Turbolinks.start()
 ActiveStorage.start()
 require('jquery')
 
+$(document).on('turbolinks:load', function() {
+
 $(function(){
   $('.notice').fadeOut(1500);
 });
@@ -30,5 +32,7 @@ $(function(){
   $(".menu_close").on("click", function(){
     $('.menu-list').removeClass('active');
   });
+
+});
 
 });

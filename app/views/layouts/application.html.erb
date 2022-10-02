@@ -16,23 +16,24 @@
         <%= link_to "ASHIMOTO SHARE", root_path, class: "nav__logo" %>
         <div class="nav__btn">
           <% if user_signed_in? %>
-            <div class="nav__item">
-              <p class="signed"><%= current_user.name %></p>
-            </div>
-            <div class="nav__item2">
+            <div class="nav__icon">
               <% if current_user.avatar? %>
                 <%= image_tag current_user.avatar.to_s, size: '50x50', class:"icon" %>
               <% else %>
                 <%= image_tag 'icon_dummy.jpg', size: '50x50', class:"icon" %>
               <% end %>
             </div>
+            <%= link_to "投稿", new_post_path, class:"new_post" %>
             <div class="hamburger-menu">
               <%= image_tag 'menu_open.png' %>
             </div>
             <div class="menu-list">
               <div class="menu-item">
                 <ul>
-                  <li><%= link_to "アカウント情報", edit_user_registration_path, class:"link" %></li>
+                  <li><%= current_user.name %></li>
+                  <li><%= link_to "トップページ", root_path, class:"link" %></li>
+                  <li><%= link_to "投稿一覧", posts_path, class:"link" %></li>
+                  <li><%= link_to "アカウント設定", edit_user_registration_path, class:"link" %></li>
                   <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"link" %></li>
                 </ul>
                 <%= image_tag 'menu_close.png', class:"menu_close", size: '33x33' %>
