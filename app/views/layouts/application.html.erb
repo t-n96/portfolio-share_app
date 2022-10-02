@@ -21,9 +21,9 @@
             </div>
             <div class="nav__item2">
               <% if current_user.avatar? %>
-                <%= image_tag current_user.avatar.to_s, size: '50x50' %>
+                <%= image_tag current_user.avatar.to_s, size: '50x50', class:"icon" %>
               <% else %>
-                <%= image_tag 'icon_dummy.jpg', size: '50x50' %>
+                <%= image_tag 'icon_dummy.jpg', size: '50x50', class:"icon" %>
               <% end %>
             </div>
             <div class="hamburger-menu">
@@ -40,6 +40,7 @@
             </div
             <div class="overlay"></div>
           <% else %>
+            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'post' %>
             <%= link_to "ログイン", new_user_session_path, class: 'post' %>
             <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
           <% end %>

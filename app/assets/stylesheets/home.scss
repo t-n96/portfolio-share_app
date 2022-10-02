@@ -37,18 +37,27 @@ header{
 
     &__item{
       margin-top: 25px;
-      margin-right: 20px;
+      margin-right: 10px;
     }
 
     &__item2{
       margin-top: 5px;
       margin-right: 20px;
+
+      & .icon{
+        border-radius: 50%;
+      }
     }
 
     & .post{
       margin-top: 20px;
+      text-decoration: none;
+      color: black;
 
       &:nth-child(1){
+        margin-right: 10px;
+      }
+      &:nth-child(2){
         margin-right: 10px;
       }
     }
