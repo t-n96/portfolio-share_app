@@ -6,7 +6,11 @@
         <%= image_tag 'image_upload_sample.jpg' %>
       </div>
       <div class="content">
-        <p>投稿内容が入ります。</p>
+        <%= form_with model: @post, local: true do |f| %>
+          <p><%= f.text_field :title, placeholder: "タイトル", class: "form" %></p>
+          <p><%= f.text_area :introduction, placeholder: "コーデの説明文を追加する", class: "form"  %></p>
+          <p>移動先リンクを追加する</p>
+        <% end %>
       </div>
     </div>
   </div

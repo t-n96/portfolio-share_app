@@ -21,5 +21,20 @@
 
   &__post-content{
     display: flex;
+
+    & .content{
+      margin-left: 40px;
+      flex-grow: 1;
+    }
   }
+}
+
+.form{
+  width: 100%;
+  border-bottom: 1px solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 30px;
+  background-color: #DCDCDC;
 }
