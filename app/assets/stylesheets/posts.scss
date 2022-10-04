@@ -27,6 +27,10 @@
       flex-grow: 1;
     }
   }
+
+  & .post_image{
+    cursor: pointer;
+  }
 }
 
 .form{
