@@ -1,7 +1,7 @@
 <div class="container">
   <div class="container__post">
     <p>画像を選択してください</p>
-    <%= form_with model: @post, local: true do |f| %>
+    <%= form_with model: @post, local: true, url: {action: 'confirm'} do |f| %>
       <div class="container__post-content">
         <div class="image">
         <%= f.label :post_image do %>
@@ -15,8 +15,8 @@
         </div>
         <div class="content">
           <p><%= f.text_field :title, placeholder: "タイトル", class: "form" %></p>
-          <p><%= f.text_area :introduction, placeholder: "コーデの説明文を追加する", class: "form"  %></p>
-          <p>移動先リンクを追加する</p>
+          <p><%= f.text_area :introduction, placeholder: "コーデの説明文を追加する", size: '15x1', class: "form"  %></p>
+          <p><%= f.submit "確認画面へ" %></p>
         </div>
       </div>
     <% end %>

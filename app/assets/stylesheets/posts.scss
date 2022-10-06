@@ -29,16 +29,20 @@
   }
 
   & .post_image{
+    max-width: 350px;
+    max-height: 450px;
     cursor: pointer;
   }
 }
 
 .form{
+  resize: vertical;
   width: 100%;
   border-bottom: 1px solid;
   border-top: none;
   border-left: none;
   border-right: none;
+  outline: none;
   font-size: 30px;
   background-color: #DCDCDC;
 }
