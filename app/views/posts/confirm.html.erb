@@ -1,1 +1,21 @@
-<h2>確認画面</h2>
+<div class="container">
+  <div class="container__post">
+    <p>確認画面</p>
+      <div class="container__post-content">
+        <div class="image">
+          <%= image_tag @post.post_image.to_s, class: "post_image" %>
+        </div>
+        <div class="content">
+          <p><%= @post.title %></p>
+          <p><%= @post.introduction %></p>
+          <%= form_with model: @post, local: true do |f| %>
+            <%= f.hidden_field :post_image %>
+            <%= f.hidden_field :title %>
+            <%= f.hidden_field :introduction %>
+            <p><%= f.submit "戻る", name: :back, class:"form-btn" %></p>
+            <p><%= f.submit "投稿する", class:"form-btn" %></p>
+          <% end %>
+        </div>
+      </div>
+  </div
+</div>
