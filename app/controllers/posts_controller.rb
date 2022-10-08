@@ -20,7 +20,7 @@ class PostsController < ApplicationController
       render :new and return
     end
     flash[:notice] = "投稿を完了しました。"
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   def show

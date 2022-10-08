@@ -2,12 +2,14 @@
   <p class="title">投稿一覧</p>
   <div class="index-content">
     <% @post.each do |post| %>
-      <p><%= post.title %></p>
-      <p><%= image_tag post.post_image.url, class: "index-image" %></p>
-      <p><%= post.introduction %></p>
-      <%= link_to "詳細", post_url(post) %>
-      <%= link_to "編集", edit_post_path(post) %>
-      <%= link_to "削除", post, method: :delete, data: {confirm: "本当に削除していいですか？"} %>
+      <div class="index-items">
+        <p><%= post.title %></p>
+        <p><%= image_tag post.post_image.url, class: "index-image" %></p>
+        <p><%= post.introduction %></p>
+        <%= link_to "詳細", post_url(post) %>
+        <%= link_to "編集", edit_post_path(post) %>
+        <%= link_to "削除", post, method: :delete, data: {confirm: "本当に削除していいですか？"} %>
+      </div>
     <% end %>
   </div>
 </div>
