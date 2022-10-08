@@ -1,2 +1,26 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="container">
+  <div class="container__post">
+    <p>投稿内容編集</p>
+    <%= form_with model: @post, local: true do |f| %>
+      <div class="container__post-content">
+        <div class="image">
+        <%= f.label :post_image do %>
+          <% if @post.post_image.present? %>
+            <%= image_tag @post.post_image.url, class: "post_image" %>
+          <% else %>
+            <%= image_tag 'image_upload_sample.jpg', class: "post_image" %>
+          <% end %>
+          <%= f.file_field :post_image, style:"display:none", class: "uploader" %>
+          <%= f.hidden_field :post_image_cache %>
+        <% end %>
+        </div>
+        <div class="content">
+          <p><%= f.text_field :title, placeholder: "タイトル", class: "form-text" %></p>
+          <p><%= f.text_area :introduction, placeholder: "コーデの説明文を追加する", size: '15x1', class: "form-area"  %></p>
+          <p><%= f.submit "更新する", class:"form-btn" %></p>
+          <%= link_to "投稿一覧へ戻る", posts_path(@post) %>
+        </div>
+      </div>
+    <% end %>
+  </div
+</div>
