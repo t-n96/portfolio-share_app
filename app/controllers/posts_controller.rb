@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @post = Post.all
   end
 
   def new
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
     if params[:back] || !@post.save
       render :new and return
     end
-    flash[:notice] = "投稿完了しました。"
+    flash[:notice] = "投稿を完了しました。"
     redirect_to root_path
   end
 
@@ -33,6 +34,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    flash[:notice] = "投稿を削除しました。"
+    redirect_to root_path
   end
 
   def post_params
