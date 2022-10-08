@@ -1,2 +1,15 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+  <div class="container__post">
+    <p>投稿内容詳細</p>
+      <div class="container__post-content">
+        <div class="image">
+          <%= image_tag @post.post_image.url, class: "post_image" %>
+        </div>
+        <div class="content">
+          <p><%= @post.title %></p>
+          <p><%= @post.introduction %></p>
+          <%= link_to "TOPへ", root_path %>
+        </div>
+      </div>
+  </div
+</div>
