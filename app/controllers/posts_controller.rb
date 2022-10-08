@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.all
+    @posts = Post.where(user_id: current_user.id).includes(:user).order("created_at DESC")
   end
 
   def new
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
     flash[:notice] = "投稿内容を更新しました。"
-    redirect_to root_path
+    redirect_to posts_path
     else
       render :edit
     end
@@ -49,6 +49,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :introduction, :post_image, :post_image_cache)
+    params.require(:post).permit(:title, :introduction, :post_image, :post_image_cache).merge(user_id: current_user.id)
   end
 end

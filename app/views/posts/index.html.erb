@@ -1,7 +1,7 @@
 <div class="index-container">
   <p class="title">投稿一覧</p>
   <div class="index-content">
-    <% @post.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="index-items">
         <p><%= post.title %></p>
         <p><%= image_tag post.post_image.url, class: "index-image" %></p>
