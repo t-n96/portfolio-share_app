@@ -6,7 +6,7 @@
         <div class="image">
         <%= f.label :post_image do %>
           <% if @post.post_image.present? %>
-            <%= image_tag @post.post_image, class: "post_image" %>
+            <%= image_tag @post.post_image.url, class: "post_image" %>
           <% else %>
             <%= image_tag 'image_upload_sample.jpg', class: "post_image" %>
           <% end %>

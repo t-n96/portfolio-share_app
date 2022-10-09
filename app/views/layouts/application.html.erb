@@ -23,7 +23,11 @@
                 <%= image_tag 'icon_dummy.jpg', size: '50x50', class:"icon" %>
               <% end %>
             </div>
-            <%= link_to "投稿", new_post_path, class:"new_post" %>
+            <% if current_page?(controller: 'posts', action: 'new') %>
+              <%= link_to "投稿やめる", root_path, class:"new_post" %>
+            <% else %>
+              <%= link_to "投稿", new_post_path, class:"new_post" %>
+            <% end %>
             <div class="hamburger-menu">
               <%= image_tag 'menu_open.png' %>
             </div>
