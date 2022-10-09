@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def confirm
     @post = Post.new(post_params)
     if @post.invalid?
-      redirect_to new_post_path, notice: '入力に誤りがあります。'
+      redirect_to new_post_path, notice: 'すべて入力・選択してください。'
     end
   end
 
