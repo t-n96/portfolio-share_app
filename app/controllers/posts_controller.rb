@@ -3,6 +3,10 @@ class PostsController < ApplicationController
     @posts = Post.where(user_id: current_user.id).includes(:user).order("created_at DESC")
   end
 
+  def index_all
+    @posts = Post.all
+  end
+
   def new
     @post = Post.new
   end
