@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     collection do
       post :confirm
       get :index_all
+      get 'search' => 'posts#search'
     end
   end
 

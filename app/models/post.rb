@@ -5,4 +5,8 @@ class Post < ApplicationRecord
   validates :introduction, length: { in: 1..75 }
 
   belongs_to :user
+
+  def self.search(keyword)
+    where(["title like? OR  introduction like?", "%#{keyword}%", "%#{keyword}%"])
+  end
 end

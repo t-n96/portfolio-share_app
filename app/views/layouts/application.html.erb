@@ -14,6 +14,12 @@
     <header>
       <div class="nav">
         <%= link_to "Feesly", root_path, class: "nav__logo" %>
+        <div class="header-search">
+          <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
+            <%= f.text_field :keyword, placeholder:"キーワードで探す" %>
+            <% f.submit :keyword %>
+          <% end %>
+        </div>
         <div class="nav__btn">
           <% if user_signed_in? %>
             <div class="nav__icon">
@@ -23,7 +29,7 @@
                 <%= image_tag 'icon_dummy.jpg', size: '50x50', class:"icon" %>
               <% end %>
             </div>
-            <% if current_page?(controller: 'posts', action: 'new') %>
+            <% if current_page?(new_post_path) %>
               <%= link_to "投稿やめる", root_path, class:"new_post" %>
             <% else %>
               <%= link_to "投稿", new_post_path, class:"new_post" %>
@@ -36,7 +42,7 @@
                 <ul>
                   <li><%= current_user.name %></li>
                   <li><%= link_to "トップページ", root_path, class:"link" %></li>
-                  <li><%= link_to "投稿一覧", posts_path, class:"link" %></li>
+                  <li><%= link_to "自分の投稿", posts_path, class:"link" %></li>
                   <li><%= link_to "みんなの投稿", index_all_posts_path, class:"link" %></li>
                   <li><%= link_to "アカウント設定", edit_user_registration_path, class:"link" %></li>
                   <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"link" %></li>
