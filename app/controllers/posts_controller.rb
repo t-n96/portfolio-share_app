@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :login_check, {only: [:show]}
   def index
     @posts = Post.where(user_id: current_user.id).includes(:user).order("created_at DESC")
   end
