@@ -13,9 +13,11 @@
   <body>
     <header>
       <div class="nav">
-        <%= link_to "Feesly", root_path, class: "nav__logo" %>
+        <%= link_to root_path do %>
+          <% image_tag 'logo.png', class: "nav__logo" %>
+        <% end %>
         <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
-          <%= f.text_field :keyword, placeholder:"キーワードで探す", class: "search" %>
+          <%= f.text_field :keyword, placeholder:"キーワードで探す：例）韓国風、スポーティー、ふんわり", class: "search" %>
           <% f.submit :keyword %>
         <% end %>
         <div class="nav__btn">
@@ -24,7 +26,7 @@
               <% if current_user.avatar? %>
                 <%= image_tag current_user.avatar.url, size: '50x50', class:"icon" %>
               <% else %>
-                <%= image_tag 'icon_dummy.jpg', size: '50x50', class:"icon" %>
+                <%= image_tag 'icon_dummy.png', size: '50x50', class:"icon" %>
               <% end %>
             </div>
             <% if current_page?(new_post_path) %>
@@ -33,7 +35,7 @@
               <%= link_to "投稿", new_post_path, class:"new_post" %>
             <% end %>
             <div class="hamburger-menu">
-              <%= image_tag 'menu_open.png' %>
+              <%= image_tag 'open-menu.png', size: '40x40' %>
             </div>
             <div class="menu-list">
               <div class="menu-item">
@@ -45,9 +47,9 @@
                   <li><%= link_to "アカウント設定", edit_user_registration_path, class:"link" %></li>
                   <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"link" %></li>
                 </ul>
-                <%= image_tag 'menu_close.png', class:"menu_close", size: '33x33' %>
+                <%= image_tag 'close-menu.png', class:"menu_close", size: '40x40' %>
               </div>
-            </div
+            </div>
             <div class="overlay"></div>
           <% else %>
             <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'post' %>

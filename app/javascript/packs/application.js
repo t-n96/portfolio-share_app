@@ -16,7 +16,7 @@ require('jquery')
 $(document).on('turbolinks:load', function() {
 
 $(function(){
-  $('.notice').fadeOut(3000);
+  $('.notice').fadeOut(4000);
 });
 
 $(function(){
