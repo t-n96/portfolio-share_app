@@ -1,6 +1,13 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$MainColor: #2f4f4f;
+$SubColor: #F5F5DC;
+$White: white;
+$Black: black;
+$Flash: #FFD700;
+$TextColor: #001100;
+
 body{
   width: 100%;
   height: 100%;
@@ -11,7 +18,7 @@ body{
 header{
   width: 100%;
   height: 80px;
-  background-color: white;
+  background-color: $SubColor;
 
   & .nav{
     width: 100%;
@@ -46,7 +53,8 @@ header{
     & .post{
       margin-top: 20px;
       text-decoration: none;
-      color: black;
+      font-weight: 600;
+      color: $MainColor;
 
       &:nth-child(1){
         margin-right: 10px;
@@ -58,7 +66,7 @@ header{
 
     & .new_post{
       text-decoration: none;
-      color: black;
+      color: $MainColor;
       margin-top: 20px;
       margin-right: 25px;
     }
@@ -75,13 +83,15 @@ header{
   height: 10px;
   margin-top: 17px;
   padding: 15px;
+  border: none;
   border-radius: 30px;
+  background-color: $White;
 }
 
 .menu-list{
   position: absolute;
   background-color: rgba(0,0,0,.5);
-  color: white;
+  color: $White;
   top: 0;
   right: -800px;
   width: 40%;
@@ -111,7 +121,7 @@ ul{
 
   & .link{
     text-decoration: none;
-    color: white;
+    color: $White;
   }
 }
 
@@ -124,7 +134,7 @@ ul{
   margin: 0;
   padding-top: 15px;
   padding-left: 20px;
-  background-color: #FFFFCC;
+  background-color: $Flash;
 }
 
 .main{
@@ -133,7 +143,7 @@ ul{
 
   &__visual{
     height: 670px;
-    background-image: url('top.png');
+    background-color: $MainColor;
     background-size: contain;
     text-align: center;
   }
@@ -141,7 +151,7 @@ ul{
   &__taxt{
     margin: 0;
     padding-top: 15%;
-    color: white;
+    color: $White;
 
     & p:nth-child(1){
       margin: 0;
@@ -159,9 +169,11 @@ ul{
 .about{
   height: 500px;
   text-align: center;
+  background-color: $White;
 
   &__text{
     padding-top: 5%;
+    color: $TextColor;
 
     & p:nth-child(1){
       font-size: 32px;
@@ -182,8 +194,9 @@ ul{
 }
 
 .mission{
-  height: 800px;
-  background-color: #C0C0C0;
+  height: 600px;
+  background-color: $SubColor;
+  color: $TextColor;
 
   &__text{
     padding-top: 5%;
@@ -201,25 +214,16 @@ ul{
     }
 
     & p:nth-child(3){
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    & p:nth-child(4){
       font-size: 14px;
       font-weight: 400;
       margin-top: 40px;
-    }
-  }
-
-  & .news{
-    text-align: center;
-    margin-top: 15%;
-
-    & p:nth-child(1){
-      font-size: 36px;
-      font-weight: 900;
-      margin: 0;
-    }
-
-    & p:nth-child(2){
-      font-size: 14px;
-      font-weight: 700;
+      line-height: 35px;
     }
   }
 }
@@ -228,8 +232,9 @@ footer{
   width: 100%;
   height: 200px;
   text-align: center;
+  color: $White;
   padding-top: 10%;
-  background-color: grey;
+  background-color: $MainColor;
 
   & p:nth-child(1){
     font-size: 36px;
