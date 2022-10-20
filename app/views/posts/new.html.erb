@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container__post">
-    <p>新規作成</p>
+    <p class="post-title">新規作成</p>
     <%= form_with model: @post, local: true, url: confirm_posts_path(@post) do |f| %>
       <div class="container__post-content">
         <div class="image">
@@ -15,8 +15,8 @@
         <% end %>
         </div>
         <div class="content">
-          <p><%= f.text_field :title, placeholder: "タイトル", class: "form-text" %></p>
-          <p><%= f.text_area :introduction, placeholder: "コーデの説明文を追加する", size: '15x1', class: "form-area"  %></p>
+          <p><%= f.text_field :title, placeholder: "コーデタイトル", class: "form-text" %></p>
+          <p><%= f.text_area :introduction, placeholder: text_placeholder, size: '15x4', class: "form-area"  %></p>
           <p><%= f.submit "確認画面へ", class:"form-btn" %></p>
         </div>
       </div>
