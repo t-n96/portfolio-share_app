@@ -5,13 +5,17 @@
       <div class="index-items">
         <p><%= post.title %></p>
         <p><%= image_tag post.post_image.url, class: "index-image" %></p>
-        <% if post.user.avatar? %>
-          <p><%= image_tag post.user.avatar.url, size: '50x50', class: "index-icon" %></p>
-        <% else %>
-          <%= image_tag 'icon_dummy.jpg', size: '50x50', class:"index-icon" %>
-        <% end %>
-        <p><%= post.user.name %></p>
-        <p><%= link_to "詳細", post_path(post) %></p>
+        <div class="index-nav">
+          <div class="index-user">
+            <% if post.user.avatar? %>
+              <p><%= image_tag post.user.avatar.url, size: '50x50', class: "index-icon" %></p>
+            <% else %>
+              <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
+            <% end %>
+            <p class="user-name"><%= post.user.name %></p>
+          </div>
+          <%= link_to "詳しく見る", post_path(post), class: "show-link" %>
+        </div>
       </div>
     <% end %>
   </div>

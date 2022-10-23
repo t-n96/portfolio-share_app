@@ -59,6 +59,7 @@ $TextColor: #001100;
     font-size: 45px;
     font-weight: 700;
     background-color: $SubColor;
+    color: #BDB76B;
   }
 
   & .form-text::placeholder{
@@ -78,6 +79,7 @@ $TextColor: #001100;
     font-size: 30px;
     font-weight: 600;
     background-color: $SubColor;
+    color: #BDB76B;
   }
 
   & .form-area::placeholder{
@@ -91,6 +93,11 @@ $TextColor: #001100;
     margin-top: 80px;
     background-color: $MainColor;
     color: $White;
+  }
+
+  & .back{
+    text-decoration: none;
+    color: $MainColor;
   }
 }
 
@@ -118,7 +125,7 @@ $TextColor: #001100;
     border-radius: 10px;
     display: inline-flex;
     flex-wrap: wrap;
-    background-color: #C0C0C0;
+    background-color: $SubColor;
 
     &:nth-child(1){
       margin-left: 0;
@@ -135,6 +142,73 @@ $TextColor: #001100;
 
     & .index-icon{
       border-radius: 50%;
+      text-align: left;
+    }
+  }
+
+  & .index-links{
+    display: flex;
+    flex-flow: column;
+
+    & .link{
+      width: 190px;
+      text-decoration: none;
+      border: 1px solid $MainColor;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px;
+      color: $MainColor;
+    }
+
+    & .link:hover{
+      background-color: $MainColor;
+      color: $White;
+    }
+
+    & .link:nth-child(2){
+      margin-top: 5px;
+    }
+
+    & .delete-link{
+      text-align: left;
+      text-decoration: none;
+      margin-top: 15px;
+      font-size: 13px;
+      color: $MainColor;
+    }
+  }
+
+  & .index-nav{
+    display: flex;
+    flex-flow: column;
+
+    & .index-user{
+      margin-top: 15px;
+      display: flex;
+
+      & p:nth-child(1){
+        margin: 0;
+      }
+
+      & .user-name{
+        margin: 15px 0 0 10px;
+      }
+    }
+
+    & .show-link{
+      width: 190px;
+      margin-top: 5px;
+      color: $MainColor;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px;
+      text-decoration: none;
+      border: 1px solid $MainColor;
+    }
+
+    & .show-link:hover{
+      background-color: $MainColor;
+      color: $White;
     }
   }
 }
