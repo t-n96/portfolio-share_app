@@ -1,14 +1,14 @@
 <div class="container">
   <div class="container__post">
-    <p>投稿内容詳細</p>
+    <p class="post-title">投稿内容詳細</p>
       <div class="container__post-content">
         <div class="image">
           <%= image_tag @post.post_image.url, class: "post_image" %>
         </div>
         <div class="content">
-          <p><%= @post.title %></p>
-          <p><%= @post.introduction %></p>
-          <%= link_to "<", index_all_posts_path %>
+          <p class="form-text"><%= @post.title %></p>
+          <p class="form-area"><%= @post.introduction %></p>
+          <%= link_to "TOPへ戻る", root_path, class: "back" %>
         </div>
       </div>
   </div

@@ -59,7 +59,7 @@ $TextColor: #001100;
     font-size: 45px;
     font-weight: 700;
     background-color: $SubColor;
-    color: #BDB76B;
+    color: $MainColor;
   }
 
   & .form-text::placeholder{
@@ -79,7 +79,7 @@ $TextColor: #001100;
     font-size: 30px;
     font-weight: 600;
     background-color: $SubColor;
-    color: #BDB76B;
+    color: $MainColor;
   }
 
   & .form-area::placeholder{
@@ -91,6 +91,27 @@ $TextColor: #001100;
     height: 50px;
     font-size: 15px;
     margin-top: 80px;
+    background-color: $MainColor;
+    cursor: pointer;
+    color: $White;
+  }
+
+  & .form-btn:hover{
+    opacity: 0.8;
+  }
+
+  & .form-back{
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    margin-top: 30px;
+    color: $MainColor;
+    background-color: $SubColor;
+    border: 1px solid $MainColor;
+    cursor: pointer;
+  }
+
+  & .form-back:hover{
     background-color: $MainColor;
     color: $White;
   }

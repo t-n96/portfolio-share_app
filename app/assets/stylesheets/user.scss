@@ -43,6 +43,11 @@ $TextColor: #001100;
     font-weight: 600;
     color: $White;
     background-color: $MainColor;
+    cursor: pointer;
+  }
+
+  & .actions-btn:hover{
+    opacity: 0.8;
   }
 }
 

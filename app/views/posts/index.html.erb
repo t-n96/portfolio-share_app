@@ -6,7 +6,7 @@
         <p><%= post.title %></p>
         <p><%= image_tag post.post_image.url, class: "index-image" %></p>
         <div class="index-links">
-          <%= link_to "詳細を見る", post_url(post), class: "link" %>
+          <%= link_to "詳しく見る", post_url(post), class: "link" %>
           <%= link_to "編集する", edit_post_path(post), class: "link" %>
           <%= link_to "削除する", post, method: :delete, data: {confirm: "本当に削除していいですか？"}, class: "delete-link" %>
         </div>
