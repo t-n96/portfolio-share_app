@@ -60,3 +60,4 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'carrierwave', '~> 2.0'
+gem "net-smtp"
