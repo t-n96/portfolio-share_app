@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Posts", type: :system do
   let(:user) { create(:user) }
-  let(:user2) { create(:user) }
   let(:post) { create(:post, user: user) }
-  let(:post2) { create(:post, user: user2) }
 
   before do
     visit root_path
@@ -17,12 +15,17 @@ RSpec.describe "Posts", type: :system do
 
   it '自分の投稿へアクセルができること' do
     click_link '自分の投稿'
-    visit posts_path
+    expect(current_path).to eq posts_path
   end
 
   it 'みんなの投稿へアクセルができること' do
     click_link 'みんなの投稿'
-    visit index_all_posts_path
+    expect(current_path).to eq index_all_posts_path
+  end
+
+  it 'ロゴクリックでTOPページへアクセスができること' do
+    click_link 'logo'
+    expect(current_path).to eq root_path
   end
 
   describe '投稿' do
@@ -31,6 +34,17 @@ RSpec.describe "Posts", type: :system do
       visit new_post_path
       expect(page).to have_content '新規作成'
       expect(current_path).to eq new_post_path
+    end
+
+    it '投稿が完了できること' do
+      visit new_post_path
+      fill_in "post[introduction]", with: post.introduction
+      fill_in "post[title]", with: post.title
+      attach_file "post[post_image]", "#{Rails.root}/spec/fixtures/images/test.jpg", visible: false
+      click_button '確認画面へ'
+      click_button '投稿する'
+      expect(page).to have_content '自分の投稿'
+      expect(current_path).to eq posts_path
     end
 
     context '空入力があると投稿できないこと' do
