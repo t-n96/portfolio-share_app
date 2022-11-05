@@ -5,16 +5,25 @@ $White: white;
 $Black: black;
 $TextColor: #001100;
 
+#error_explanation{
+  color: #d73a31;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%,0);
+  display: inline;
+}
+
 .login-container{
   width: 100%;
-  height: 600px;
-  color: $TextColor;
+  height: 700px;
+  color: $MainColor;
 
   & .login-content{
     width: 350px;
-    height: 500px;
-    margin: 80px auto;
-    background-color: $SubColor;
+    height: 550px;
+    margin: 120px auto;
+    background-color: $ItemColor;
     border-radius: 20px;
   }
 
@@ -66,5 +75,5 @@ $TextColor: #001100;
 .login-link{
   text-decoration: none;
   font-size: 13px;
-  color: $TextColor;
+  color: $MainColor;
 }
