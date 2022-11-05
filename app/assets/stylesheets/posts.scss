@@ -1,11 +1,11 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-$MainColor: #2f4f4f;
-$SubColor: #F5F5DC;
+$MainColor: #3E3E3B;
+$SubColor: #A2AAB0;
+$ItemColor: #CBC5C1;
 $White: white;
 $Black: black;
-$Flash: #FFD700;
 $TextColor: #001100;
 
 .container{
@@ -18,7 +18,7 @@ $TextColor: #001100;
     margin: 50px auto;
     padding: 50px 65px;
     border-radius: 15px;
-    background-color: $SubColor;
+    background-color: $ItemColor;
 
     & p{
       margin: 0;
@@ -51,19 +51,19 @@ $TextColor: #001100;
   & .form-text{
     resize: vertical;
     width: 100%;
-    border-bottom: 1px solid #BDB76B;
+    border-bottom: 1px solid #EBECED;
     border-top: none;
     border-left: none;
     border-right: none;
     outline: none;
     font-size: 45px;
     font-weight: 700;
-    background-color: $SubColor;
+    background-color: $ItemColor;
     color: $MainColor;
   }
 
   & .form-text::placeholder{
-    color:#BDB76B;
+    color: #EBECED;
   }
 
   & .form-area{
@@ -71,25 +71,26 @@ $TextColor: #001100;
     resize: vertical;
     width: 100%;
     max-height: 180px;
-    border-bottom: 1px solid #BDB76B;
+    border-bottom: 1px solid #EBECED;
     border-top: none;
     border-left: none;
     border-right: none;
     outline: none;
     font-size: 30px;
     font-weight: 600;
-    background-color: $SubColor;
+    background-color: $ItemColor;
     color: $MainColor;
   }
 
   & .form-area::placeholder{
-    color:#BDB76B;
+    color: #EBECED;
   }
 
   & .form-btn{
     width: 100%;
     height: 50px;
     font-size: 15px;
+    font-weight: 600;
     margin-top: 80px;
     background-color: $MainColor;
     cursor: pointer;
@@ -106,7 +107,7 @@ $TextColor: #001100;
     font-size: 15px;
     margin-top: 30px;
     color: $MainColor;
-    background-color: $SubColor;
+    background-color: $ItemColor;
     border: 1px solid $MainColor;
     cursor: pointer;
   }
@@ -129,6 +130,7 @@ $TextColor: #001100;
 
   & .title{
     text-align: center;
+    font-weight: 600;
     margin-top: 50px;
   }
 
@@ -146,7 +148,7 @@ $TextColor: #001100;
     border-radius: 10px;
     display: inline-flex;
     flex-wrap: wrap;
-    background-color: $SubColor;
+    background-color: $ItemColor;
 
     &:nth-child(1){
       margin-left: 0;
