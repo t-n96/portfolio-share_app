@@ -11,7 +11,15 @@ $TextColor: #001100;
   top: 100px;
   left: 50%;
   transform: translate(-50%,0);
-  display: inline;
+}
+
+.alert{
+  color: #d73a31;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translate(-50%,0);
+  margin: 0;
 }
 
 .login-container{
@@ -21,7 +29,7 @@ $TextColor: #001100;
 
   & .login-content{
     width: 350px;
-    height: 550px;
+    height: 500px;
     margin: 120px auto;
     background-color: $ItemColor;
     border-radius: 20px;
@@ -63,6 +71,15 @@ $TextColor: #001100;
 
 .field{
   margin-top: 15px;
+}
+
+.field:nth-child(2){
+  display:flex;
+  flex-flow: column;
+}
+
+.login-field:nth-child(2){
+  margin: 0 auto;
 }
 
 .login-title{

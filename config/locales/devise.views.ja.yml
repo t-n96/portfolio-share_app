@@ -6,13 +6,15 @@ ja:
         avatar: "アイコン"
         name: "ユーザー名"
         email: "メールアドレス"
-        password: "パスワード"
+        password: "パスワード（6文字以上）"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
     errors:
       models:
         user:
           attributes:
+            name:
+              blank: "が入力されていません。"
             email:
               taken: "は既に使用されています。"
               blank: "が入力されていません。"
@@ -22,7 +24,7 @@ ja:
             password:
               taken: "は既に使用されています。"
               blank: "が入力されていません。"
-              too_short: "は%{count}文字以上に設定して下さい。"
+              too_short: "の文字数が足りません。"
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
             password_confirmation:
@@ -33,6 +35,8 @@ ja:
     confirmations:
       new:
         resend_confirmation_instructions: "アカウント確認メール再送"
+    failure:
+      invalid: "ログインに失敗しました。再度正しく入力してください。"
     mailer:
       confirmation_instructions:
         action: "アカウント確認"
