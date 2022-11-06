@@ -97,10 +97,6 @@ $TextColor: #001100;
     color: $White;
   }
 
-  & .form-btn:hover{
-    opacity: 0.8;
-  }
-
   & .form-back{
     width: 100%;
     height: 50px;
@@ -112,7 +108,33 @@ $TextColor: #001100;
     cursor: pointer;
   }
 
-  & .form-back:hover{
+  & .confirm-btn{
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 30px;
+    background-color: $MainColor;
+    cursor: pointer;
+    color: $White;
+  }
+
+  & .confirm-back{
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    margin-top: 20px;
+    color: $MainColor;
+    background-color: $ItemColor;
+    border: 1px solid $MainColor;
+    cursor: pointer;
+  }
+
+  & .form-btn:hover, .confirm-btn:hover{
+    opacity: 0.8;
+  }
+
+  & .form-back:hover, .confirm-back:hover{
     background-color: $MainColor;
     color: $White;
   }

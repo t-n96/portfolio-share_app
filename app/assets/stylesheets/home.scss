@@ -104,6 +104,7 @@ header{
   width: 40%;
   height: 100%;
   transition: all .5s;
+  z-index: 100;
 
   & .menu-item{
     display: flex;

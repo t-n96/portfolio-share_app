@@ -6,8 +6,15 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
         <div class="field">
-          <%= f.label :avatar %>
-          <%= f.file_field :avatar %>
+          <%= f.label :avatar do %>
+            <% if current_user.avatar? %>
+              <%= image_tag current_user.avatar.url, size: '70x70', class:"post_image" %>
+            <% else %>
+              <%= image_tag 'icon_dummy.png', size: '70x70', class:"post_image" %>
+            <% end %>
+            <%= f.file_field :avatar, style:"display:none", class: "uploader" %>
+            <%= f.hidden_field :avatar_cache %>
+          <% end %>
         </div>
 
         <div class="field">
@@ -17,31 +24,30 @@
 
         <div class="field">
           <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "edit-field" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "email-field" %>
         </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
-        
-        <div class="ps-change">
-        <p>○パスワード変更○</p>
-          <div class="field">
-            <%= f.label :password, "新しいパスワード" %>
-            <%= f.password_field :password, autocomplete: "new-password", id: "edit-field" %>
-            <% if @minimum_password_length %>
-              <% @minimum_password_length %>
-            <% end %>
-          </div>
 
-          <div class="field">
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "edit-field" %>
-          </div>
+        <p class="ps-change">ー パスワード変更 ー</p>
+
+        <div class="field">
+          <%= f.label :password, "新しいパスワード" %>
+          <%= f.password_field :password, autocomplete: "new-password", id: "edit-field" %>
+          <% if @minimum_password_length %>
+            <% @minimum_password_length %>
+          <% end %>
         </div>
 
-        <p class="under-line"></p>
-        <p>内容を更新する時は現在のパスワード入力が必要です。</p>
+        <div class="field">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "edit-field" %>
+        </div>
+
+
+        <p class="caution">内容を更新する時は現在のパスワード入力が必要です。</p>
 
         <div class="field">
           <%= f.label :current_password %>
@@ -53,11 +59,14 @@
         </div>
       <% end %>
 
+      <p class="under-line"></p>
+
       <p>アカウント削除</p>
 
-      <p>※この操作は取り消しができません。 <%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当にアカウント削除しますか？" }, method: :delete %></p>
+      <%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当にアカウント削除しますか？" }, method: :delete, class: "delete-btn" %>
+      <p class="caution2">※この操作は取り消しができません。</p>
 
-      <%= link_to "戻る", :back %>
+      <%= link_to "< TOPへ戻る", :back, class: "edit-back" %>
     </div>
   </div>
 </div>
