@@ -22,6 +22,12 @@ $TextColor: #001100;
   margin: 0;
 }
 
+.under-line{
+  width: 400px;
+  margin: 30px auto;
+  border-bottom: 1px dashed $MainColor;
+}
+
 .login-container{
   width: 100%;
   height: 700px;
@@ -93,4 +99,52 @@ $TextColor: #001100;
   text-decoration: none;
   font-size: 13px;
   color: $MainColor;
+}
+
+.edit-container{
+  width: 100%;
+  height: 1000px;
+  color: $MainColor;
+
+  & .edit-title{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  & .edit-content{
+    position: relative;
+    width: 550px;
+    height: 800px;
+    margin: 0 auto;
+    background-color: $ItemColor;
+    border-radius: 20px;
+  }
+
+  & .edit-items{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & .edit-field{
+    width: 250px;
+    height: 25px;
+    margin-left: 30px;
+  }
+
+  & #edit-field{
+    width: 250px;
+    height: 25px;
+  }
+
+  & .edit-btn{
+    width: 390px;
+    height: 30px;
+    color: $White;
+    margin-top: 20px;
+    background-color: $MainColor;
+  }
 }
