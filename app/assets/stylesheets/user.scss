@@ -41,10 +41,6 @@ $TextColor: #001100;
     border-radius: 20px;
   }
 
-  & .login-form{
-    text-align: center;
-  }
-
   & .login-field{
     width: 250px;
     height: 30px;
@@ -77,6 +73,11 @@ $TextColor: #001100;
 
 .field{
   margin-top: 15px;
+
+  & .post_image{
+    border-radius: 50%;
+    top: 0;
+  }
 }
 
 .field:nth-child(2){
@@ -86,6 +87,10 @@ $TextColor: #001100;
 
 .login-field:nth-child(2){
   margin: 0 auto;
+}
+
+.login-form{
+  text-align: center;
 }
 
 .login-title{
@@ -108,6 +113,8 @@ $TextColor: #001100;
 
   & .post_image{
     cursor: pointer;
+    margin-left: 43%;
+    margin-bottom: 10px;
   }
 
   & .edit-title{
@@ -120,7 +127,7 @@ $TextColor: #001100;
   & .edit-content{
     position: relative;
     width: 550px;
-    height: 900px;
+    height: 850px;
     margin: 0 auto;
     background-color: $ItemColor;
     border-radius: 20px;
@@ -191,4 +198,44 @@ $TextColor: #001100;
   height: 30px;
   color: $White;
   background-color: #d73a31;
+}
+
+.pass-container{
+  width: 100%;
+  height: 500px;
+  color: $MainColor;
+
+  & .ps-field{
+    margin-top: 20px;
+  }
+
+  & .pass-content{
+    width: 500px;
+    height: 300px;
+    margin: 120px auto;
+    background-color: $ItemColor;
+    border-radius: 20px;
+
+    & .pass-field{
+      width: 350px;
+      height: 30px;
+      margin: 10px auto;
+    }
+  }
+
+  & .pass-btn{
+    width: 350px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    color: $White;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: $MainColor;
+    cursor: pointer;
+  }
+
+  .pass-btn:hover{
+    opacity: 0.8;
+  }
 }
