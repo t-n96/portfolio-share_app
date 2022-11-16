@@ -7,7 +7,7 @@
         </div>
         <div class="content">
           <p class="form-text"><%= @post.title %></p>
-          <p class="form-area"><%= @post.introduction %></p>
+          <p class="form-area"><%= safe_join(@post.introduction.split("\n"),tag(:br)) %></p>
           <%= link_to "TOPへ戻る", root_path, class: "back" %>
         </div>
       </div>
