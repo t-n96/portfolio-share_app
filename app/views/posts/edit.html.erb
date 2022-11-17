@@ -17,7 +17,7 @@
         <div class="content">
           <p><%= f.text_field :title, placeholder: "タイトル", class: "form-text" %></p>
           <p><%= f.text_area :introduction, placeholder: "コーデの説明文を追加する", size: '15x7', class: "form-area"  %></p>
-          <p><%= f.submit "更新する", class:"form-btn" %></p>
+          <p><%= f.submit "更新する", class:"edit-btn" %></p>
           <%= link_to "投稿一覧へ戻る", posts_path(@post), class: "back" %>
         </div>
       </div>

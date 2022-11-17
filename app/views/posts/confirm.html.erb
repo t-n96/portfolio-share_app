@@ -7,14 +7,14 @@
         </div>
         <div class="content">
           <p class="form-text"><%= @post.title %></p>
-          <p class="form-area"><%= @post.introduction %></p>
+          <p class="form-area"><%= safe_join(@post.introduction.split("\n"),tag(:br)) %></p>
           <%= form_with model: @post, local: true do |f| %>
             <%= f.hidden_field :post_imag %>
             <%= f.hidden_field :post_image_cache %>
             <%= f.hidden_field :title %>
             <%= f.hidden_field :introduction %>
             <p><%= f.submit "投稿する", class:"confirm-btn" %></p>
-            <p><%= f.submit "戻る", name: :back, class:"confirm-back" %></p>
+            <p><%= f.submit "＜戻る", name: :back, class:"confirm-back" %></p>
           <% end %>
         </div>
       </div>
