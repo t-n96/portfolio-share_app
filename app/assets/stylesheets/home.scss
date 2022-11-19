@@ -219,6 +219,10 @@ ul{
       font-weight: 900;
       margin: 0;
     }
+
+    & .category-link:hover{
+      opacity: 0.6;
+    }
   }
 }
 

@@ -25,8 +25,20 @@
     <div class="mission__text">
       <p>let's look</p>
       <p>カテゴリー別に探す</p>
-      <%= link_to basic_posts_path do %>
+      <%= link_to basic_posts_path, class: "category-link" do %>
         <% image_tag 'category-logo_01.png' %>
+      <% end %>
+      <%= link_to feminine_posts_path, class: "category-link" do %>
+        <% image_tag 'category-logo_02.png' %>
+      <% end %>
+      <%= link_to colorful_posts_path, class: "category-link" do %>
+        <% image_tag 'category-logo_03.png' %>
+      <% end %>
+      <%= link_to stylish_posts_path, class: "category-link" do %>
+        <% image_tag 'category-logo_04.png' %>
+      <% end %>
+      <%= link_to sneaker_posts_path, class: "category-link" do %>
+        <% image_tag 'category-logo_05.png' %>
       <% end %>
     </div>
   </div>

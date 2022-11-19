@@ -3,7 +3,7 @@
   <div class="index-content">
     <% @colors.each do |color| %>
       <div class="index-items">
-        <p><%= basic.title %></p>
+        <p><%= color.title %></p>
         <p><%= image_tag color.post_image.url, class: "index-image" %></p>
         <div class="index-nav">
           <div class="index-user">

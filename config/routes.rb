@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'basic' => 'posts#basic'
       get 'stylish' => 'posts#stylish'
       get 'feminine' => 'posts#feminine'
-      get 'sneakers' => 'posts#sneakers'
+      get 'sneaker' => 'posts#sneaker'
       get 'colorful' => 'posts#colorful'
     end
   end
