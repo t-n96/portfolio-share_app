@@ -10,7 +10,7 @@
             <% if post.user.avatar? %>
               <p><%= image_tag post.user.avatar.url, size: '50x50', class: "index-icon" %></p>
             <% else %>
-              <%= image_tag 'icon_dummy.jpg', size: '50x50', class:"index-icon" %>
+              <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
             <% end %>
             <p class="user-name"><%= post.user.name %></p>
           </div>

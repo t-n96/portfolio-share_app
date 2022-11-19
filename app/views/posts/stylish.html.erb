@@ -1,0 +1,22 @@
+<div class="index-container">
+  <p class="title">スタイリッシュ：<%= @styles.count %>件</p>
+  <div class="index-content">
+    <% @styles.each do |style| %>
+      <div class="index-items">
+        <p><%= style.title %></p>
+        <p><%= image_tag style.post_image.url, class: "index-image" %></p>
+        <div class="index-nav">
+          <div class="index-user">
+            <% if style.user.avatar? %>
+              <p><%= image_tag style.user.avatar.url, size: '50x50', class: "index-icon" %></p>
+            <% else %>
+              <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
+            <% end %>
+            <p class="user-name"><%= style.user.name %></p>
+          </div>
+          <%= link_to "詳しく見る", post_path(style), class: "show-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

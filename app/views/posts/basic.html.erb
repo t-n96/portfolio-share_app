@@ -1,0 +1,22 @@
+<div class="index-container">
+  <p class="title">ベーシック：<%= @basics.count %>件</p>
+  <div class="index-content">
+    <% @basics.each do |basic| %>
+      <div class="index-items">
+        <p><%= basic.title %></p>
+        <p><%= image_tag basic.post_image.url, class: "index-image" %></p>
+        <div class="index-nav">
+          <div class="index-user">
+            <% if basic.user.avatar? %>
+              <p><%= image_tag basic.user.avatar.url, size: '50x50', class: "index-icon" %></p>
+            <% else %>
+              <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
+            <% end %>
+            <p class="user-name"><%= basic.user.name %></p>
+          </div>
+          <%= link_to "詳しく見る", post_path(basic), class: "show-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

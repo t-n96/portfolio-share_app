@@ -1,0 +1,22 @@
+<div class="index-container">
+  <p class="title">スニーカー：<%= @sneakers.count %>件</p>
+  <div class="index-content">
+    <% @sneakers.each do |sneaker| %>
+      <div class="index-items">
+        <p><%= sneaker.title %></p>
+        <p><%= image_tag sneaker.post_image.url, class: "index-image" %></p>
+        <div class="index-nav">
+          <div class="index-user">
+            <% if sneaker.user.avatar? %>
+              <p><%= image_tag sneaker.user.avatar.url, size: '50x50', class: "index-icon" %></p>
+            <% else %>
+              <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
+            <% end %>
+            <p class="user-name"><%= sneaker.user.name %></p>
+          </div>
+          <%= link_to "詳しく見る", post_path(sneaker), class: "show-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

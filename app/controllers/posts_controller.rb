@@ -53,7 +53,27 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def basic
+    @basics = Post.where(category:"basic")
+  end
+
+  def colorful
+    @colors = Post.where(category:"colorful")
+  end
+
+  def feminine
+    @feminines = Post.where(category:"feminine")
+  end
+
+  def sneaker
+    @sneakers = Post.where(category:"sneaker")
+  end
+
+  def stylish
+    @styles = Post.where(category:"stylish")
+  end
+
   def post_params
-    params.require(:post).permit(:title, :introduction, :post_image, :post_image_cache).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :introduction, :post_image, :post_image_cache, :category).merge(user_id: current_user.id)
   end
 end

@@ -5,6 +5,11 @@ Rails.application.routes.draw do
       post :confirm
       get :index_all
       get 'search' => 'posts#search'
+      get 'basic' => 'posts#basic'
+      get 'stylish' => 'posts#stylish'
+      get 'feminine' => 'posts#feminine'
+      get 'sneakers' => 'posts#sneakers'
+      get 'colorful' => 'posts#colorful'
     end
   end
 

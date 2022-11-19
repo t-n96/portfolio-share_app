@@ -1,0 +1,22 @@
+<div class="index-container">
+  <p class="title">フェミニン：<%= @feminines.count %>件</p>
+  <div class="index-content">
+    <% @feminines.each do |feminine| %>
+      <div class="index-items">
+        <p><%= feminine.title %></p>
+        <p><%= image_tag feminine.post_image.url, class: "index-image" %></p>
+        <div class="index-nav">
+          <div class="index-user">
+            <% if feminine.user.avatar? %>
+              <p><%= image_tag feminine.user.avatar.url, size: '50x50', class: "index-icon" %></p>
+            <% else %>
+              <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
+            <% end %>
+            <p class="user-name"><%= feminine.user.name %></p>
+          </div>
+          <%= link_to "詳しく見る", post_path(feminine), class: "show-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
