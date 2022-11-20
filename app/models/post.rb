@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   validates :title, :introduction, :post_image, presence: true
   validates :title, length: { in: 1..15 }
   validates :introduction, length: { in: 1..105 }
+  enum status: { published: 0, draft: 1 }
 
   belongs_to :user
 

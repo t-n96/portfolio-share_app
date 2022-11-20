@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :posts do
     collection do
       post :confirm
+      get :draft
       get :index_all
       get 'search' => 'posts#search'
       get 'basic' => 'posts#basic'

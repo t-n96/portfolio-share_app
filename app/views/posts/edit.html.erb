@@ -24,6 +24,7 @@
           ["sneaker(スニーカースタイル)", "sneaker"],
           ["stylish(スタイリッシュ)", "stylish"]],
           include_blank: "カテゴリー選択（選択せず投稿もできます）", class: "categoty" %></p>
+          <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]}, {} %>
           <p><%= f.submit "更新する", class:"edit-btn" %></p>
           <%= link_to "投稿一覧へ戻る", posts_path(@post), class: "back" %>
         </div>

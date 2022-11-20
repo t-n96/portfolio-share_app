@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   before_action :login_check, {only: [:show]}
   def index
-    @posts = Post.where(user_id: current_user.id).includes(:user).order("created_at DESC")
+    @posts = Post.published.where(user_id: current_user.id).includes(:user).order("created_at DESC")
   end
 
   def index_all
-    @posts = Post.all
+    @posts = Post.published.all
   end
 
   def new
@@ -19,13 +19,23 @@ class PostsController < ApplicationController
     end
   end
 
+  def draft
+    @posts = current_user.posts.draft
+  end
+
   def create
     @post = Post.new(post_params)
     if params[:back] || !@post.save
       render :new and return
+
+    elsif params[:post][:status] == 'draft'
+      flash[:notice] = "下書き保存しました。"
+      redirect_to draft_posts_path
+
+    else params[:post][:status] == 'published'
+      flash[:notice] = "投稿を完了しました。"
+      redirect_to posts_path
     end
-    flash[:notice] = "投稿を完了しました。"
-    redirect_to posts_path
   end
 
   def show
@@ -50,7 +60,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     flash[:notice] = "投稿を削除しました。"
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   def basic
@@ -74,6 +84,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :introduction, :post_image, :post_image_cache, :category).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :introduction, :post_image, :post_image_cache, :category, :status).merge(user_id: current_user.id)
   end
 end

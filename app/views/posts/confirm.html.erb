@@ -15,6 +15,7 @@
             <%= f.hidden_field :title %>
             <%= f.hidden_field :introduction %>
             <%= f.hidden_field :category %>
+            <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]}, {} %>
             <p><%= f.submit "投稿する", class:"confirm-btn" %></p>
             <p><%= f.submit "＜戻る", name: :back, class:"confirm-back" %></p>
           <% end %>
