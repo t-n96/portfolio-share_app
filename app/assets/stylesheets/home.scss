@@ -13,7 +13,7 @@ body{
   height: 100%;
   margin: 0;
   position: relative;
-  background-color: #EBECED;
+  // background-color: #EBECED;
 }
 
 header{
@@ -229,21 +229,14 @@ ul{
   height: 600px;
   color: $TextColor;
   text-align: center;
+  background-image: url('category-back-img.png');
 
   &__text{
     padding-top: 5%;
     padding-left: 60px;
 
-    & p:nth-child(1){
-      font-size: 30px;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    & p:nth-child(2){
-      font-size: 40px;
-      font-weight: 900;
-      margin: 0;
+    & .category-img{
+      margin-top: 100px;
     }
 
     & .category-link:hover{
