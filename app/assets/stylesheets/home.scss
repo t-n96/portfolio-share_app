@@ -228,17 +228,23 @@ ul{
 .category-content{
   height: 600px;
   color: $TextColor;
-  text-align: center;
   background-image: url('category-back-img.png');
 
-  &__text{
-    padding-top: 5%;
-    padding-left: 60px;
+  &__items{
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
 
     & .category-img{
-      margin-top: 100px;
+      margin-top: 180px;
+      margin-right: 50px;
     }
 
+    & .category-img2{
+      margin-top: 30px;
+      margin-right: 50px;
+    }
+    
     & .category-link:hover{
       opacity: 0.6;
     }
