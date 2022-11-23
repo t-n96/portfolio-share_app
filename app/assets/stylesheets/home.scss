@@ -226,28 +226,48 @@ ul{
 }
 
 .category-content{
-  height: 600px;
+  position: relative;
+  height: 700px;
   color: $TextColor;
   background-image: url('category-back-img.png');
 
   &__items{
-    width: 80%;
+    width: 100%;
     text-align: center;
     margin: 0 auto;
 
     & .category-img{
       margin-top: 180px;
-      margin-right: 50px;
     }
 
-    & .category-img2{
-      margin-top: 30px;
-      margin-right: 50px;
+    & .category-img:nth-child(3){
+      margin-top: 100px;
     }
 
     & .category-link:hover{
       opacity: 0.6;
     }
+  }
+
+  & .all-posts{
+    width: 170px;
+    height: 40px;
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: 1px solid $MainColor;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    color: $MainColor;
+  }
+
+  & .all-posts:hover{
+    background-color: $MainColor;
+    color: $White;
   }
 }
 
