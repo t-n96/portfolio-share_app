@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def index_all
     @posts = Post.published.all
+    @favorite = Favorite.new
   end
 
   def new

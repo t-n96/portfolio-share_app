@@ -15,5 +15,10 @@ class User < ApplicationRecord
     end
   end
 
+  def favorited?(post)
+    self.favorites.exists?(post_id: post.id)
+  end
+
   has_many :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end

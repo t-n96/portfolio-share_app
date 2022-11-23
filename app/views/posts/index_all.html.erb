@@ -14,6 +14,15 @@
             <% end %>
             <p class="user-name"><%= post.user.name %></p>
           </div>
+          <% if current_user.favorited?(post) %>
+            <%= link_to post_favorites_path(post.id), method: :delete, class: "favorite" do %>
+              <span class="favo1">❤︎</span>
+            <% end %>
+          <% else %>
+            <%= link_to post_favorites_path(post.id), method: :post, class: "favorite" do %>
+              <span class="favo2">❤︎</span>
+            <% end %>
+          <% end %>
           <%= link_to "詳しく見る", post_path(post), class: "show-link" %>
         </div>
       </div>

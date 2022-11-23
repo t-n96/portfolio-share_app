@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   enum status: { published: 0, draft: 1 }
 
   belongs_to :user
+  has_many :favorites, dependent: :destroy
 
   def self.search(keyword)
     where(["title like? OR  introduction like?", "%#{keyword}%", "%#{keyword}%"])

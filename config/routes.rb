@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'home#top'
   resources :posts do
+    resource :favorites, only: [:create, :destroy]
     collection do
       post :confirm
       get :draft
