@@ -13,7 +13,7 @@
               <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
             <% end %>
             <p class="user-name"><%= post.user.name %></p>
-            <% if current_user.favorited?(post) %>
+            <% if post.favorited?(current_user) %>
               <%= link_to post_favorites_path(post.id), method: :delete do %>
                 <% image_tag 'favo-logo-01.png', class: "favo-logo" %>
               <% end %>

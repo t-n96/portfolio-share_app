@@ -3,9 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
-
   validates :name, presence: true
-  validates :name, length: { in: 1..8 }
 
   mount_uploader :avatar, AvatarUploader
 
@@ -14,10 +12,6 @@ class User < ApplicationRecord
       user.name = 'ゲスト'
       user.password = SecureRandom.urlsafe_base64
     end
-  end
-
-  def favorited?(post)
-    self.favorites.exists?(post_id: post.id)
   end
 
   has_many :posts, dependent: :destroy

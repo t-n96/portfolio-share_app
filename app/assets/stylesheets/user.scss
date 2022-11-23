@@ -41,6 +41,14 @@ $TextColor: #001100;
     border-radius: 20px;
   }
 
+  & .session-content{
+    width: 350px;
+    height: 450px;
+    margin: 120px auto;
+    background-color: $ItemColor;
+    border-radius: 20px;
+  }
+
   & .login-field{
     width: 250px;
     height: 30px;

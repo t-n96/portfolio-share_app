@@ -52,6 +52,17 @@ $TextColor: #001100;
     color: #d73a31;
   }
 
+  & .favo-cont{
+    display: flex;
+    margin-bottom: 30px;
+
+    & .text-count{
+      margin-top: 10px;
+      font-weight: 600;
+      color: $MainColor;
+    }
+  }
+
   & .form-text{
     resize: vertical;
     width: 100%;

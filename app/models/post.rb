@@ -11,4 +11,8 @@ class Post < ApplicationRecord
   def self.search(keyword)
     where(["title like? OR  introduction like?", "%#{keyword}%", "%#{keyword}%"])
   end
+
+  def favorited?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end
