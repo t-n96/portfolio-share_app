@@ -39,5 +39,4 @@ class Users::SessionsController < Devise::SessionsController
     flash[:notice] = "ログアウトしました。"
     root_path
   end
-
 end

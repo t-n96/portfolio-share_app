@@ -44,6 +44,7 @@
                   <li><%= link_to "自分の投稿", posts_path, class:"link" %></li>
                   <li><%= link_to "下書き一覧", draft_posts_path, class:"link" %></li>
                   <li><%= link_to "みんなの投稿", index_all_posts_path, class:"link" %></li>
+                  <li><%= link_to "いいねした投稿", favorites_all_post_path(current_user), class:"link" %></li>
                   <li></li>
                   <li><%= link_to "アカウント設定", edit_user_registration_path, class:"link" %></li>
                   <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"link" %></li>

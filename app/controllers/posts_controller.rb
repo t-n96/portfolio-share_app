@@ -12,6 +12,11 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def favorites_all
+    favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)
+    @favorite_posts = Post.find(favorites)
+  end
+
   def confirm
     @post = Post.new(post_params)
     if @post.invalid?

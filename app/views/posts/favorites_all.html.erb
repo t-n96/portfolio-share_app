@@ -1,0 +1,31 @@
+<div class="index-container">
+  <p class="title">いいねした投稿</p>
+  <div class="index-content">
+    <% @favorite_posts.each do |post| %>
+      <div class="index-items">
+        <p><%= post.title %></p>
+        <p><%= image_tag post.post_image.url, class: "index-image" %></p>
+        <div class="index-nav">
+          <div class="index-user">
+            <% if post.user.avatar? %>
+              <p><%= image_tag post.user.avatar.url, size: '50x50', class: "index-icon" %></p>
+            <% else %>
+              <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
+            <% end %>
+            <p class="user-name"><%= post.user.name %></p>
+            <% if post.favorited?(current_user) %>
+              <%= link_to post_favorites_path(post.id), method: :delete do %>
+                <% image_tag 'favo-logo-01.png', class: "favo-logo" %>
+              <% end %>
+            <% else %>
+              <%= link_to post_favorites_path(post.id), method: :post do %>
+                <% image_tag 'favo-logo-02.png', class: "favo-logo" %>
+              <% end %>
+            <% end %>
+          </div>
+          <%= link_to "more", post_path(post), class: "show-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
