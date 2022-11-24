@@ -39,6 +39,10 @@
         <% image_tag 'category-logo_05.png', class: "category-img2"  %>
       <% end %>
     </div>
-    <%= link_to 'more' , index_all_posts_path, class: "all-posts" %>
+    <% if user_signed_in? %>
+      <%= link_to 'more >' , index_all_posts_path, class: "all-posts" %>
+    <% else %>
+      <%= link_to 'more >' , all_posts_posts_path, class: "all-posts" %>
+    <% end %>
   </div>
 </div>

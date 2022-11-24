@@ -8,6 +8,10 @@ class PostsController < ApplicationController
     @posts = Post.published.all
   end
 
+  def all_posts
+    @posts = Post.published.all
+  end
+
   def new
     @post = Post.new
   end

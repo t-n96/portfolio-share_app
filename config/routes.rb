@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       post :confirm
       get :draft
       get :index_all
+      get :all_posts
       get 'search' => 'posts#search'
       get 'basic' => 'posts#basic'
       get 'stylish' => 'posts#stylish'

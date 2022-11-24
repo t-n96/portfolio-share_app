@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, except: [:top, :search, :show, :basic, :feminine, :colorful, :stylish, :sneaker]
+  before_action :authenticate_user!, except: [:top, :search, :show, :basic, :feminine, :colorful, :stylish, :sneaker, :all_posts]
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters

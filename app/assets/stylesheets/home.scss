@@ -227,7 +227,7 @@ ul{
 
 .category-content{
   position: relative;
-  height: 700px;
+  height: 660px;
   color: $TextColor;
   background-image: url('category-back-img.png');
 
@@ -250,18 +250,17 @@ ul{
   }
 
   & .all-posts{
-    width: 170px;
-    height: 40px;
+    width: 120px;
+    height: 30px;
     position: absolute;
-    top: 500px;
-    left: 50%;
+    top: 530px;
+    left: 75%;
     transform: translate(-50%, 0);
+    padding: 10px 0;
     border: 1px solid $MainColor;
-    border-radius: 5px;
     text-decoration: none;
     text-align: center;
-    font-size: 23px;
-    font-weight: 600;
+    font-size: 17px;
     color: $MainColor;
   }
 
