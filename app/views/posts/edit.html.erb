@@ -27,7 +27,7 @@
             {include_blank: "カテゴリー選択（任意）"}, {class: 'select-edit'}  %></p>
             <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]}, {}, {class: 'select-edit'}  %>
           </div>
-          <p><%= f.submit "更新する", class:"edit-btn" %></p>
+          <p><%= f.submit "更新する", class:"form-btn" %></p>
         </div>
       </div>
     <% end %>
