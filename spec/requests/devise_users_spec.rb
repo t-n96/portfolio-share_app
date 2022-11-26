@@ -37,7 +37,7 @@ let(:invalid_user_params) { attributes_for(:user, name: "") }
 
       it 'エラーが表示されること' do
         post user_registration_path, params: { user: invalid_user_params }
-        expect(response.body).to include "エラーが発生したため ユーザ は保存されませんでした。"
+        expect(response.body).to include "が入力されていません。"
       end
     end
   end

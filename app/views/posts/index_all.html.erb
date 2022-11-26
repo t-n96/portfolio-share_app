@@ -14,11 +14,11 @@
             <% end %>
             <p class="user-name"><%= post.user.name %></p>
             <% if post.favorited?(current_user) %>
-              <%= link_to post_favorites_path(post.id), method: :delete do %>
+              <%= link_to post_favorites_path(post.id), method: :delete, id: "favo-delete" do %>
                 <% image_tag 'favo-logo-01.png', class: "favo-logo" %>
               <% end %>
             <% else %>
-              <%= link_to post_favorites_path(post.id), method: :post do %>
+              <%= link_to post_favorites_path(post.id), method: :post, id: "favo-post" do %>
                 <% image_tag 'favo-logo-02.png', class: "favo-logo" %>
               <% end %>
             <% end %>

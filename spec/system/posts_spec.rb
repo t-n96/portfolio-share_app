@@ -7,7 +7,6 @@ RSpec.describe "Posts", type: :system do
   before do
     visit root_path
     click_link "ログイン"
-    fill_in "ユーザー名", with: user.name
     fill_in "メールアドレス", with: user.email
     fill_in "パスワード", with: user.password
     click_button "ログインする"
@@ -42,7 +41,7 @@ RSpec.describe "Posts", type: :system do
       fill_in "post[title]", with: post.title
       attach_file "post[post_image]", "#{Rails.root}/spec/fixtures/images/test.jpg", visible: false
       click_button '確認画面へ'
-      click_button '投稿する'
+      click_button '完了'
       expect(page).to have_content '自分の投稿'
       expect(current_path).to eq posts_path
     end
@@ -57,14 +56,14 @@ RSpec.describe "Posts", type: :system do
       it 'タイトルが空だと投稿できないこと' do
         fill_in "post[title]", with: ''
         fill_in "post[introduction]", with: post.introduction
-        expect(page).to have_content 'すべて入力・選択してください。'
+        expect(page).to have_content '入力漏れがあります。お手数ですが、入力内容をご確認のうえ再度お試しください。'
         expect(current_path).to eq new_post_path
       end
 
       it '紹介文が空だと投稿できないこと' do
         fill_in "post[title]", with: post.title
         fill_in "post[introduction]", with: ''
-        expect(page).to have_content 'すべて入力・選択してください。'
+        expect(page).to have_content '入力漏れがあります。お手数ですが、入力内容をご確認のうえ再度お試しください。'
         expect(current_path).to eq new_post_path
       end
     end
