@@ -12,19 +12,26 @@ RSpec.describe "Posts", type: :system do
     click_button "ログインする"
   end
 
-  it '自分の投稿へアクセルができること' do
-    click_link '自分の投稿'
-    expect(current_path).to eq posts_path
-  end
+  describe 'アクセス' do
+    it '自分の投稿へアクセルができること' do
+      click_link '自分の投稿'
+      expect(current_path).to eq posts_path
+    end
 
-  it 'みんなの投稿へアクセルができること' do
-    click_link 'みんなの投稿'
-    expect(current_path).to eq index_all_posts_path
-  end
+    it 'いいねした投稿へアクセルができること' do
+      click_link 'いいねした投稿'
+      expect(current_path).to eq favorites_all_post_path(user.id)
+    end
 
-  it 'ロゴクリックでTOPページへアクセスができること' do
-    click_link 'logo'
-    expect(current_path).to eq root_path
+    it 'みんなの投稿へアクセルができること' do
+      click_link 'みんなの投稿'
+      expect(current_path).to eq index_all_posts_path
+    end
+
+    it 'ロゴクリックでTOPページへアクセスができること' do
+      click_link 'logo'
+      expect(current_path).to eq root_path
+    end
   end
 
   describe '投稿' do

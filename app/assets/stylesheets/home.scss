@@ -172,6 +172,12 @@ ul{
     background-image: url('top.png');
     background-size: contain;
     text-align: center;
+    opacity: 0;
+    transition: 1.5s;
+  }
+
+  &__visual.show{
+    opacity: 1;
   }
 
   &__taxt{
@@ -281,4 +287,18 @@ footer{
     font-size: 14px;
     font-weight: 400;
   }
+}
+
+.fadeUpTrigger{
+  transform: translateY(30px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 1s, opacity 1s, visibility 1s;
+
+}
+
+.is-fadein {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
 }

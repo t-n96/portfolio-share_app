@@ -50,4 +50,23 @@ $(function() {
   });
 });
 
+$(function () {
+  $(window).scroll(function () {
+    const windowHeight = $(window).height();
+    const scroll = $(window).scrollTop();
+
+    $('.fadeUpTrigger').each(function () {
+      const targetPosition = $(this).offset().top;
+      if (scroll > targetPosition - windowHeight + 100) {
+        $(this).addClass("is-fadein");
+      }
+    });
+  });
+});
+
+$(window.onload = function() {
+  const fade = document.getElementsByClassName('main__visual');
+  fade[0].classList.add('show');
+});
+
 });
