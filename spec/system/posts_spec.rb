@@ -41,6 +41,7 @@ RSpec.describe "Posts", type: :system do
       fill_in "post[title]", with: post.title
       attach_file "post[post_image]", "#{Rails.root}/spec/fixtures/images/test.jpg", visible: false
       click_button '確認画面へ'
+      select '投稿する', from: 'select'
       click_button '完了'
       expect(page).to have_content '自分の投稿'
       expect(current_path).to eq posts_path
@@ -66,6 +67,20 @@ RSpec.describe "Posts", type: :system do
         expect(page).to have_content '入力漏れがあります。お手数ですが、入力内容をご確認のうえ再度お試しください。'
         expect(current_path).to eq new_post_path
       end
+    end
+  end
+
+  describe '下書き機能' do
+    it '下書き保存できること' do
+      visit new_post_path
+      fill_in "post[introduction]", with: post.introduction
+      fill_in "post[title]", with: post.title
+      attach_file "post[post_image]", "#{Rails.root}/spec/fixtures/images/test.jpg", visible: false
+      click_button '確認画面へ'
+      select '下書き', from: 'select'
+      click_button '完了'
+      expect(page).to have_content '下書き一覧'
+      expect(current_path).to eq draft_posts_path
     end
   end
 end

@@ -16,7 +16,7 @@
             <%= f.hidden_field :introduction %>
             <%= f.hidden_field :category %>
             <p class="status">ステータスを選択して完了してください。</p>
-            <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]}, {}, {class: 'select'}  %>
+            <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]}, {}, {id: 'select'}  %>
             <p><%= f.submit "完了", class:"form-btn" %></p>
             <p><%= f.submit "＜戻る", name: :back, class:"confirm-back" %></p>
           <% end %>
