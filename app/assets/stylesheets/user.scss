@@ -1,5 +1,5 @@
-@import "colors";
-@import "reuse";
+@import "parts/colors";
+@import "parts/reuse";
 
 #error_explanation{
   @include alert-error;

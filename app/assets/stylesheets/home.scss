@@ -1,7 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-@import "colors";
+@import "parts/colors";
 
 body{
   width: 100%;
@@ -155,7 +155,6 @@ ul{
   top: 80;
   left: 0;
   margin: 0;
-  text-align: center;
   width: 100%;
   height: 35px;
   padding-top: 15px;

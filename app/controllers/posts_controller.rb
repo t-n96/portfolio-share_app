@@ -69,27 +69,27 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     flash[:notice] = "削除が完了しました。"
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   def basic
-    @basics = Post.where(category:"basic")
+    @posts = Post.where(category:"basic")
   end
 
   def colorful
-    @colors = Post.where(category:"colorful")
+    @posts = Post.where(category:"colorful")
   end
 
   def feminine
-    @feminines = Post.where(category:"feminine")
+    @posts = Post.where(category:"feminine")
   end
 
   def sneaker
-    @sneakers = Post.where(category:"sneaker")
+    @posts = Post.where(category:"sneaker")
   end
 
   def stylish
-    @styles = Post.where(category:"stylish")
+    @posts = Post.where(category:"stylish")
   end
 
   def post_params

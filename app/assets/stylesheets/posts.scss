@@ -1,8 +1,8 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-@import "colors";
-@import "reuse";
+@import "parts/colors";
+@import "parts/reuse";
 
 .container{
   width: 100%;

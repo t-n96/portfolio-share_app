@@ -27,16 +27,16 @@ class Users::SessionsController < Devise::SessionsController
   def guest_sign_in
     user = User.guest
     sign_in user
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+    redirect_to index_all_posts_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 
   def after_sign_in_path_for(resource)
     flash[:notice] = "ログインに成功しました。"
-    root_path
+    index_all_posts_path
   end
 
   def after_sign_out_path_for(resource)
     flash[:notice] = "ログアウトしました。"
-    root_path
+    new_user_session_path
   end
 end

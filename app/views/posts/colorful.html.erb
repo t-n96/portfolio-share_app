@@ -1,22 +1,22 @@
 <div class="index-container">
-  <p class="title">カラフル：<%= @colors.count %>件</p>
+  <p class="title">カラフル：<%= @posts.count %>件</p>
   <div class="index-content">
-    <% @colors.each do |color| %>
-      <div class="index-items">
-        <p><%= color.title %></p>
-        <p><%= image_tag color.post_image.url, class: "index-image" %></p>
-        <div class="index-nav">
-          <div class="index-user">
-            <% if color.user.avatar? %>
-              <p><%= image_tag color.user.avatar.url, size: '50x50', class: "index-icon" %></p>
-            <% else %>
-              <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
-            <% end %>
-            <p class="user-name"><%= color.user.name %></p>
-          </div>
-          <%= link_to "詳しく見る", post_path(color), class: "show-link" %>
+  <% @posts.each do |post| %>
+    <div class="index-items">
+      <p><%= post.title %></p>
+      <p><%= image_tag post.post_image.url, class: "index-image" %></p>
+      <div class="index-nav">
+        <div class="index-user">
+          <% if post.user.avatar? %>
+            <p><%= image_tag post.user.avatar.url, size: '50x50', class: "index-icon" %></p>
+          <% else %>
+            <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
+          <% end %>
+          <p class="user-name"><%= post.user.name %></p>
         </div>
+        <%= link_to "more", post_path(post), class: "show-link" %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
 </div>
