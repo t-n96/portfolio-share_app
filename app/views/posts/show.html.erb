@@ -9,11 +9,13 @@
           <p class="form-text"><%= @post.title %></p>
           <p class="form-area"><%= safe_join(@post.introduction.split("\n"),tag(:br)) %></p>
           <p class="form-area"> カテゴリー：<%= @post.category %></p>
-          <div class="favo-cont">
-            <%= image_tag 'favo-logo-01.png' %>
-            <p class="text-count"><%= @post.favorites.count %></p>
+          <div class="content-items">
+            <div class="favo-cont">
+              <%= image_tag 'favo-logo-01.png' %>
+              <p class="text-count"><%= @post.favorites.count %></p>
+            </div>
+            <%= link_to "< 戻る", posts_path, class: "back" %>
           </div>
-          <%= link_to "< 戻る", posts_path, class: "back" %>
         </div>
       </div>
   </div

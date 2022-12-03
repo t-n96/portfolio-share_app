@@ -48,12 +48,18 @@
     color: #d73a31;
   }
 
+  & .content-items{
+    display: flex;
+    justify-content: space-between;
+  }
+
   & .favo-cont{
     display: flex;
     margin-bottom: 30px;
 
     & .text-count{
       margin-top: 10px;
+      margin-bottom: 0;
       font-weight: 600;
       color: $MainColor;
     }
@@ -139,6 +145,7 @@
 
   & .back{
     text-decoration: none;
+    margin-top: 10px;
     color: $MainColor;
   }
 }
