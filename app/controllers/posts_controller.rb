@@ -73,23 +73,23 @@ class PostsController < ApplicationController
   end
 
   def basic
-    @posts = Post.where(category:"basic")
+    @posts = Post.published.where(category:"basic")
   end
 
   def colorful
-    @posts = Post.where(category:"colorful")
+    @posts = Post.published.where(category:"colorful")
   end
 
   def feminine
-    @posts = Post.where(category:"feminine")
+    @posts = Post.published.where(category:"feminine")
   end
 
   def sneaker
-    @posts = Post.where(category:"sneaker")
+    @posts = Post.published.where(category:"sneaker")
   end
 
   def stylish
-    @posts = Post.where(category:"stylish")
+    @posts = Post.published.where(category:"stylish")
   end
 
   def post_params
