@@ -93,12 +93,11 @@ header{
   position: absolute;
   background-color: rgba(0,0,0,.7);
   color: $White;
+  right: 0;
   top: 0;
-  right: -800px;
   width: 30%;
   height: 100%;
-  transition: all .5s;
-  z-index: 100;
+  display: none;
 
   & .menu-item{
     display: flex;
@@ -115,7 +114,8 @@ header{
 }
 
 .menu-list.active{
-  right: 0;
+  display: block;
+  animation: appear .5s ease;
 }
 
 ul{
@@ -301,4 +301,13 @@ footer{
   transform: translateX(0);
   opacity: 1;
   visibility: visible;
+}
+
+@keyframes appear {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
