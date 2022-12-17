@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def index_all
-    @posts = Post.published.all
+    @posts = Post.published.page(params[:page]).per(5)
   end
 
   def all_posts
