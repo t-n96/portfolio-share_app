@@ -1,0 +1,24 @@
+<div class="index-content">
+  <% if @users.exists? %>
+  <% @users.each do |user| %>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <% if user.avatar? %>
+              <p><%= image_tag user.avatar.url, size: '50x50', class: "index-icon" %></p>
+            <% else %>
+              <%= image_tag 'icon_dummy.png', size: '50x50', class:"index-icon" %>
+            <% end %>
+          </td>
+          <td><%= user.name %></td>
+          <td>フォロー: <%= user.followings.count %></td>
+          <td>フォロワー: <%= user.followers.count %></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+  <% else %>
+    <p>ユーザーはいません</p>
+  <% end %>
+</div>

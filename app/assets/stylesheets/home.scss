@@ -128,20 +128,16 @@ ul{
 
   & li:nth-child(1){
     margin-top: 70px;
-    margin-bottom: 40px;
-  }
-
-  & li:nth-child(5){
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
 
   & li:nth-child(6){
-    width: 330px;
-    border-bottom: 1px solid $White;
+    margin-bottom: 45px;
   }
 
   & li:nth-child(7){
-    margin-bottom: 5px;
+    width: 330px;
+    border-bottom: 1px solid $White;
   }
 
   & li{

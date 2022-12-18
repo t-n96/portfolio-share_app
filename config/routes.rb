@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relationships/followings'
+  get 'relationships/followers'
   root to: 'home#top'
   resources :posts do
     resource :favorites, only: [:create, :destroy]
@@ -25,5 +27,10 @@ Rails.application.routes.draw do
   }
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
   end
 end

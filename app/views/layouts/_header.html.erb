@@ -28,6 +28,14 @@
           <div class="menu-item">
             <ul>
               <li>ログイン中のアカウント：<br><%= current_user.name %></li>
+              <li>
+                <%= link_to user_followings_path(current_user), class:"link" do %>
+                  <p>フォロー <%= current_user.followings.count %></p>
+                <% end %>
+                <%= link_to user_followers_path(current_user), class:"link" do %>
+                  <p>フォロワー <%= current_user.followers.count %></p>
+                <% end %>
+              </li>
               <li><%= link_to "自分の投稿", posts_path, class:"link" %></li>
               <li><%= link_to "下書き一覧", draft_posts_path, class:"link" %></li>
               <li><%= link_to "みんなの投稿", index_all_posts_path, class:"link" %></li>
