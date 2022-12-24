@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "parts/colors";
+@import "parts/reuse";
 
 body{
   width: 100%;
@@ -234,7 +235,15 @@ ul{
   position: relative;
   height: 660px;
   color: $TextColor;
-  background-image: url('category-back-img.png');
+  background-color: #ebebecff;
+
+  & .caption01{
+    @include caption;
+  }
+
+  & .caption02{
+    @include caption(67%);
+  }
 
   &__items{
     width: 100%;
@@ -258,7 +267,7 @@ ul{
     width: 120px;
     height: 30px;
     position: absolute;
-    top: 530px;
+    top: 547px;
     left: 75%;
     transform: translate(-50%, 0);
     padding: 10px 0;
