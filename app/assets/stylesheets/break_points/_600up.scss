@@ -1,3 +1,5 @@
+@import "parts/reuse";
+
 .search{
   width: 250px;
 }
@@ -6,5 +8,77 @@
   &__visual{
     height: 600px;
     background-size:cover;
+    background-image: url('top_600up.png');
   }
+
+  &__taxt{
+    padding-top: 30%;
+
+    & p:nth-child(1){
+      font-size: 55px;
+    }
+
+    & p:nth-child(2){
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+}
+
+.about{
+  height: 150px;
+
+  &__text{
+
+    & p:nth-child(1){
+      font-size: 20px;
+    }
+
+    & p:nth-child(2){
+      font-size: 16px;
+    }
+
+    & p:nth-child(3){
+      font-size: 12px;
+    }
+  }
+}
+
+.category-content{
+  height: 1000px;
+
+  & .caption02{
+    @include caption(75%);
+  }
+
+  & .all-posts{
+    top: 870px;
+    left: 50%;
+  }
+}
+
+footer{
+  height: 130px;
+  text-align: center;
+  color: $MainColor;
+  padding-top: 8%;
+  background-color: $SubColor;
+
+  & .footer-logo{
+    max-width: 125px;
+    max-height: 150px;
+  }
+
+  & p{
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.login-list{
+  display: none;
+}
+
+.login-hamburger-menu{
+  display: block;
 }

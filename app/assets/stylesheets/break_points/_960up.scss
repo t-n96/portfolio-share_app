@@ -12,7 +12,7 @@
 }
 
 .about{
-  height: 427px;
+  height: 250px;
 }
 
 .category-content{
@@ -29,4 +29,12 @@
   & .all-posts{
     top: 700px;
   }
+}
+
+.login-hamburger-menu{
+  display: none;
+}
+
+.login-close{
+  display: none;
 }

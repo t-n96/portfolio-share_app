@@ -49,9 +49,17 @@
         </div>
         <div class="overlay"></div>
       <% else %>
-        <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'post' %>
-        <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-        <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        <div class="login-hamburger-menu">
+          <%= image_tag 'open-menu.png', size: '40x40', id: "login-open.png" %>
+        </div>
+        <div class="login-list">
+          <div class="login-nav">
+            <%= image_tag 'close-menu.png', class:"login-close", size: '40x40' %>
+            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'post' %>
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>

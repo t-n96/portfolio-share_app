@@ -205,7 +205,7 @@ ul{
 }
 
 .about{
-  height: 500px;
+  height: 300px;
   text-align: center;
   background-color: $White;
 
@@ -248,14 +248,10 @@ ul{
   &__items{
     width: 100%;
     text-align: center;
-    margin: 0 auto;
+    margin: 180px auto 0 auto;
 
     & .category-img{
       margin-top: 180px;
-    }
-
-    & .category-img:nth-child(3){
-      margin-top: 100px;
     }
 
     & .category-link:hover{
