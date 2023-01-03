@@ -46,25 +46,6 @@ header{
       }
     }
 
-    & .post{
-      margin-top: 20px;
-      text-decoration: none;
-      font-weight: 600;
-      color: $MainColor;
-      cursor: pointer;
-
-      &:nth-child(1){
-        margin-right: 10px;
-      }
-      &:nth-child(2){
-        margin-right: 10px;
-      }
-    }
-
-    & .post:hover{
-      opacity: 0.8;
-    }
-
     & .new_post{
       text-decoration: none;
       color: $MainColor;
@@ -154,6 +135,35 @@ ul{
     margin-bottom: 15px;
     letter-spacing: 2px;
   }
+}
+
+.login-hamburger-menu{
+  display: none;
+}
+
+.login-list{
+  display: block;
+
+  & .login-nav{
+    margin-top: 20px;
+  }
+
+  & .post{
+    margin-top: 40px;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: $MainColor;
+    cursor: pointer;
+  }
+
+  & .post:hover{
+    opacity: 0.8;
+  }
+}
+
+.login-close{
+  display: none;
 }
 
 .notice{

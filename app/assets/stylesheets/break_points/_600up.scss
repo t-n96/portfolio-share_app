@@ -75,10 +75,41 @@ footer{
   }
 }
 
-.login-list{
-  display: none;
-}
-
 .login-hamburger-menu{
   display: block;
+  margin-top: 12px;
+}
+
+.login-close{
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+.login-list{
+  display: none;
+
+  & .post{
+    color: $White;
+    margin: 0 auto 20px auto;
+  }
+}
+
+.login-list.active{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 50%;
+  height: 60%;
+  background-color: rgba(0,0,0,.7);
+  animation: appear .5s ease;
+
+  & .login-nav{
+    margin-top: 75px;
+    display: flex;
+    flex-flow: column;
+  }
+
 }

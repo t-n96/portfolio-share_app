@@ -35,6 +35,22 @@ $(function(){
 
 });
 
+$(function(){
+
+  $(".login-hamburger-menu").on("click", function(){
+    $('.login-list').toggleClass('active');
+  });
+
+});
+
+$(function(){
+
+  $(".login-close").on("click", function(){
+    $('.login-list').removeClass('active');
+  });
+
+});
+
 $(function() {
   function readURL(input) {
       if (input.files && input.files[0]) {
