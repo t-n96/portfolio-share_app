@@ -4,7 +4,7 @@
       <% image_tag 'logo.png', class: "nav__logo" %>
     <% end %>
     <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
-      <%= f.text_field :keyword, placeholder:"キーワードで探す：例）韓国風、スポーティー、ふんわり", class: "search" %>
+      <%= f.text_field :keyword, placeholder:"キーワード検索", class: "search" %>
       <% f.submit :keyword %>
     <% end %>
     <div class="nav__btn">
