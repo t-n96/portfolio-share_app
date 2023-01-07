@@ -115,5 +115,38 @@ footer{
     display: flex;
     flex-flow: column;
   }
+}
 
+.container{
+  &__post{
+    width: 460px;
+    height: 400px;
+    padding: 30px;
+  }
+
+  & .post-title{
+    font-size: 15px;
+  }
+
+  & .post_image{
+    max-width: 200px;
+    max-height: 250px;
+  }
+}
+
+
+.content{
+  margin-left: 20px;
+
+  & .form-text{
+    font-size: 25px;
+  }
+
+  & .form-area{
+    font-size: 17px;
+  }
+
+  & .form-btn{
+    font-size: 13px;
+  }
 }

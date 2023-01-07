@@ -17,7 +17,7 @@
           <% end %>
         </div>
         <% if current_page?(new_post_path) %>
-          <%= link_to "投稿やめる", root_path, class:"new_post" %>
+          <%= link_to "戻る", root_path, class:"new_post" %>
         <% else %>
           <%= link_to "投稿", new_post_path, class:"new_post" %>
         <% end %>
@@ -29,7 +29,7 @@
             <ul>
               <li>ログイン中のアカウント：<br><%= current_user.name %></li>
               <li>
-                <%= link_to user_followings_path(current_user), class:"link follow" do %>
+                <%= link_to user_followings_path(current_user), class:"link" do %>
                   <p>フォロー <%= current_user.followings.count %></p>
                 <% end %>
                 <%= link_to user_followers_path(current_user), class:"link" do %>

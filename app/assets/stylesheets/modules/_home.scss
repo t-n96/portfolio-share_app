@@ -108,6 +108,10 @@ ul{
     color: $White;
   }
 
+  & .link:nth-child(1){
+    margin-right: 10px;
+  }
+
   & li:nth-child(1){
     margin-top: 70px;
     margin-bottom: 0;
@@ -116,10 +120,6 @@ ul{
   & li:nth-child(2){
     margin-top: -10px;
     display: flex;
-
-    & .follow{
-      margin-right: 20px;
-    }
   }
 
   & li:nth-child(6){
