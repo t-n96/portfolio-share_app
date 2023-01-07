@@ -33,3 +33,17 @@
     }
   }
 }
+
+.container{
+  &__post{
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+  }
+}
+
+.edit-container{
+  & .edit-content{
+    width: 450px;
+  }
+}
