@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+  get 'comments/destroy'
   get 'relationships/followings'
   get 'relationships/followers'
   root to: 'home#top'
   resources :posts do
+    resources :comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
     member do
       get :favorites_all
