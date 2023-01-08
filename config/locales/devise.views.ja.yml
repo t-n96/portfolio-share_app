@@ -15,6 +15,7 @@ ja:
           attributes:
             name:
               blank: "が入力されていません。"
+              too_long: "は5文字以内に入力ください。"
             email:
               taken: "は既に使用されています。"
               blank: "が入力されていません。"

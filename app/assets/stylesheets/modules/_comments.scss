@@ -7,6 +7,10 @@
 .comment-box{
   margin-left: 260px;
 
+  & .comment-icon{
+    border-radius: 50%;
+  }
+
   & .comment-text{
     position: relative;
     max-width: 750px;

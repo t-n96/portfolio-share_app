@@ -40,7 +40,7 @@
         <% @comments.each do |comment| %>
           <tr>
             <% if comment.user.avatar? %>
-              <td><%= image_tag comment.user.avatar.url, size: '50x50' %></td>
+              <td><%= image_tag comment.user.avatar.url, size: '50x50', class: "comment-icon" %></td>
             <% else %>
               <td><%= image_tag 'icon_dummy.png', size: '50x50' %></td>
             <% end %>
