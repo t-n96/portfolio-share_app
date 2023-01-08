@@ -46,7 +46,9 @@
             <% end %>
             <td><%= comment.user.name %>：</td>
             <td><%= comment.comment %></td>
-            <td><%= link_to "削除", post_comment_path(@post, comment), method: :delete, class: "comment-delete" %></td>
+            <% if user_signed_in? && current_user.id == comment.user_id %>
+              <td><%= link_to "削除", post_comment_path(@post, comment), method: :delete, class: "comment-delete" %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>
