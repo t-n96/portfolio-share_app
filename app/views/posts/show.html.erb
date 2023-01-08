@@ -24,25 +24,27 @@
         </div>
       </div>
   </div>
-  <%= form_with model: [@post, @comment] do |f| %>
-    <%= f.text_area :comment, size: "40x5" %>
-    <%= f.submit 'コメントする' %>
-  <% end %>
-  <table>
-  <thead>
-    <tr>
-      <th>ユーザー</th>
-      <th>コメント内容</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @comments.each do |comment| %>
-      <tr>
-        <td><%= comment.user.name %></td>
-        <td><%= comment.comment %></td>
-        <td><%= link_to "削除", post_comment_path(@post, comment), method: :delete %></td>
-      </tr>
+  <div class="comment-box">
+    <%= form_with model: [@post, @comment] do |f| %>
+      <%= f.text_area :comment, size: "110x3", class: "comment-text" %>
+      <%= f.submit 'コメントする', class: "comment-btn" %>
     <% end %>
-  </tbody>
-</table>
+    <table>
+      <thead>
+        <tr>
+          <th>ユーザー</th>
+          <th>コメント内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr>
+            <td><%= comment.user.name %></td>
+            <td><%= comment.comment %></td>
+            <td><%= link_to "削除", post_comment_path(@post, comment), method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
