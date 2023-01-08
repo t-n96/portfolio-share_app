@@ -47,3 +47,27 @@
     width: 450px;
   }
 }
+
+.back{
+  font-size: 13px;
+}
+
+.follow{
+  width: 80px;
+  height: 22px;
+  font-size: 11px;
+  margin-right: 0;
+}
+
+.comment-box{
+  margin-left: 20px;
+
+  & .comment-text{
+    max-width: 300px;
+    max-height: 40px;
+  }
+  & .comment-btn{
+    height: 40px;
+    top: 48%;
+  }
+}

@@ -135,6 +135,7 @@ footer{
 }
 
 .content{
+  width: 100px;
   margin-left: 20px;
 
   & .form-text{
@@ -147,5 +148,20 @@ footer{
 
   & .form-btn{
     font-size: 13px;
+  }
+}
+
+.follow{
+  margin-right: 5px;
+}
+
+.comment-box{
+  margin-left: 40px;
+
+  & .comment-text{
+    max-width: 390px;
+  }
+  & .comment-btn{
+    top: 49%;
   }
 }
