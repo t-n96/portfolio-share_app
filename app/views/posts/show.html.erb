@@ -30,17 +30,26 @@
       <%= f.submit 'コメントする', class: "comment-btn" %>
     <% end %>
     <p>コメント: <%= @comments.count %></p>
-    <div class="comment-all">
-      <% @comments.each do |comment| %>
-        <% if comment.user.avatar? %>
-          <><%= image_tag comment.user.avatar.url, size: '50x50' %></p>
-        <% else %>
-          <%= image_tag 'icon_dummy.png', size: '50x50' %>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr>
+            <% if comment.user.avatar? %>
+              <td><%= image_tag comment.user.avatar.url, size: '50x50' %></td>
+            <% else %>
+              <td><%= image_tag 'icon_dummy.png', size: '50x50' %></td>
+            <% end %>
+            <td><%= comment.user.name %>：</td>
+            <td><%= comment.comment %></td>
+            <td><%= link_to "削除", post_comment_path(@post, comment), method: :delete, class: "comment-delete" %></td>
+          </tr>
         <% end %>
-        <p><%= comment.user.name %></p>
-        <p><%= comment.comment %></p>
-        <%= link_to "削除", post_comment_path(@post, comment), method: :delete, class: "comment-delete" %>
-      <% end %>
-    </div>
+      </tbody>
+    </table>
   </div>
 </div>
