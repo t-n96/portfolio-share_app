@@ -29,22 +29,18 @@
       <%= f.text_area :comment, size: "110x3", class: "comment-text" %>
       <%= f.submit 'コメントする', class: "comment-btn" %>
     <% end %>
-    <table>
-      <thead>
-        <tr>
-          <th>ユーザー</th>
-          <th>コメント内容</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @comments.each do |comment| %>
-          <tr>
-            <td><%= comment.user.name %></td>
-            <td><%= comment.comment %></td>
-            <td><%= link_to "削除", post_comment_path(@post, comment), method: :delete %></td>
-          </tr>
+    <p>コメント: <%= @comments.count %></p>
+    <div class="comment-all">
+      <% @comments.each do |comment| %>
+        <% if comment.user.avatar? %>
+          <><%= image_tag comment.user.avatar.url, size: '50x50' %></p>
+        <% else %>
+          <%= image_tag 'icon_dummy.png', size: '50x50' %>
         <% end %>
-      </tbody>
-    </table>
+        <p><%= comment.user.name %></p>
+        <p><%= comment.comment %></p>
+        <%= link_to "削除", post_comment_path(@post, comment), method: :delete, class: "comment-delete" %>
+      <% end %>
+    </div>
   </div>
 </div>

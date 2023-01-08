@@ -33,3 +33,24 @@
     background-color: $MainColor;
   }
 }
+
+.comment-all{
+  display: flex;
+  color: $TextColor;
+
+  & p:nth-child(2){
+    margin-right: 20px;
+  }
+
+  & .comment-delete{
+    width: 45px;
+    height: 20px;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 13px;
+    border-radius: 3px;
+    color: $TextColor;
+    text-decoration: none;
+    background-color: $ItemColor;
+  }
+}
